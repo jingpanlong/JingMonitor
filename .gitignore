@@ -1,0 +1,6 @@
+bin/
+obj/
+dist/
+smoke-data/
+smoke-results/
+self-test-results.txt

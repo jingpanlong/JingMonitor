@@ -1,0 +1,26 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <Style TargetType="ContextMenu">
+  <Setter Property="Background" Value="{DynamicResource Brush_141E2F}"/><Setter Property="Foreground" Value="{DynamicResource Brush_E8EDF5}"/><Setter Property="BorderBrush" Value="{DynamicResource Brush_253249}"/><Setter Property="Padding" Value="7"/><Setter Property="MinWidth" Value="248"/>
+  <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ContextMenu"><Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="14" Padding="{TemplateBinding Padding}"><StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle"/></Border></ControlTemplate></Setter.Value></Setter>
+ </Style>
+ <Style TargetType="MenuItem">
+  <Setter Property="Foreground" Value="{DynamicResource Brush_E8EDF5}"/><Setter Property="FontFamily" Value="Microsoft YaHei UI"/><Setter Property="FontSize" Value="12"/><Setter Property="Padding" Value="10,10"/>
+  <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="MenuItem"><Grid>
+   <Border x:Name="Row" Background="Transparent" CornerRadius="7" Padding="{TemplateBinding Padding}"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="26"/><ColumnDefinition/><ColumnDefinition Width="18"/></Grid.ColumnDefinitions>
+    <ContentPresenter x:Name="Glyph" ContentSource="Icon" VerticalAlignment="Center"/>
+    <TextBlock x:Name="Check" Text="✓" Foreground="{DynamicResource Brush_5CE4C0}" Visibility="Collapsed" FontWeight="Bold"/>
+    <ContentPresenter Grid.Column="1" ContentSource="Header" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+    <TextBlock x:Name="Arrow" Grid.Column="2" Text="›" FontSize="18" Margin="6,-3,0,-3" Visibility="Collapsed" Foreground="{DynamicResource Brush_8193AC}"/>
+   </Grid></Border>
+   <Popup x:Name="PART_Popup" IsOpen="{TemplateBinding IsSubmenuOpen}" Placement="Right" HorizontalOffset="3" AllowsTransparency="True" Focusable="False" PopupAnimation="Fade"><Border Background="{DynamicResource Brush_141E2F}" BorderBrush="{DynamicResource Brush_253249}" BorderThickness="1" CornerRadius="12" Padding="7" MinWidth="210"><StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle"/></Border></Popup>
+  </Grid><ControlTemplate.Triggers>
+   <Trigger Property="IsHighlighted" Value="True"><Setter TargetName="Row" Property="Background" Value="{DynamicResource Brush_203B3C}"/></Trigger>
+   <Trigger Property="IsSubmenuOpen" Value="True"><Setter TargetName="Row" Property="Background" Value="{DynamicResource Brush_203B3C}"/></Trigger>
+   <Trigger Property="HasItems" Value="True"><Setter TargetName="Arrow" Property="Visibility" Value="Visible"/></Trigger>
+   <Trigger Property="IsChecked" Value="True"><Setter TargetName="Check" Property="Visibility" Value="Visible"/><Setter TargetName="Glyph" Property="Visibility" Value="Collapsed"/></Trigger>
+   <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Row" Property="Opacity" Value="0.55"/></Trigger>
+  </ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter>
+ </Style>
+ <Style TargetType="Separator"><Setter Property="Margin" Value="10,6"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Separator"><Border Background="{DynamicResource Brush_253249}" Height="1"/></ControlTemplate></Setter.Value></Setter></Style>
+ <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource {x:Type Separator}}"/>
+</ResourceDictionary>
