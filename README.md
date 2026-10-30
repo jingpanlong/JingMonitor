@@ -1,5 +1,9 @@
 # 景·速 Jing Monitor
 
+<p align="center">
+  <img src="screenshots/banner.jpg" alt="景·速 Jing Monitor 1.3.0 宣传横幅" width="860">
+</p>
+
 > 一款为 Windows 打造的**本地网速与硬件监控**桌面悬浮工具 —— 让性能可见，让桌面更美。
 
 [![GitHub release](https://img.shields.io/github/v/release/jingpanlong/JingMonitor?label=最新版本&color=orange)](https://github.com/jingpanlong/JingMonitor/releases)
